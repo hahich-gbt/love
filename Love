@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Валентинка 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Arial", sans-serif;
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 360px;
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      color: #e63946;
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: 160px;
+      margin: 10px 0 20px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      font-size: 1.1em;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yes {
+      background: #4caf50;
+      color: white;
+    }
+
+    #no {
+      background: #e63946;
+      color: white;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>Ты будешь моей валентинкой? 💕</h1>
+
+    <img src="https://i.imgur.com/JYUbN0p.png" alt="котик">
+
+    <div class="buttons">
+      <button id="yes">Да 💖</button>
+      <button id="no">Нет 🙈</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    let yesSize = 1;
+
+    noBtn.addEventListener("touchstart", moveNo);
+    noBtn.addEventListener("mouseover", moveNo);
+
+    function moveNo() {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 60;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+      yesSize += 0.1;
+      yesBtn.style.transform = `scale(${yesSize})`;
+    }
+
+    yesBtn.addEventListener("click", () => {
+      document.getElementById("card").innerHTML = `
+        <h1>Урааа! 😻💘</h1>
+        <img src="https://i.imgur.com/4AiXzf8.png">
+        <p style="font-size:1.2em;">Теперь ты моя валентинка 💖</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
