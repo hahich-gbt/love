@@ -71,7 +71,7 @@
   <div class="card" id="card">
     <h1>Ты будешь моей валентинкой? 💕</h1>
 
-    <img src="https://i.imgur.com/JYUbN0p.png" alt="котик">
+   <img src="cat1.jpg" alt="котик">
 
     <div class="buttons">
       <button id="yes">Да 💖</button>
@@ -99,7 +99,7 @@
     yesBtn.addEventListener("click", () => {
       document.getElementById("card").innerHTML = `
         <h1>Урааа! 😻💘</h1>
-        <img src="https://i.imgur.com/4AiXzf8.png">
+        <img src="cat.jpg">
         <p style="font-size:1.2em;">Теперь ты моя валентинка 💖</p>
       `;
     });
